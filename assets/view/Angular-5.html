@@ -1,0 +1,48 @@
+<!Doctype html>
+<html lang="es" ng-app="myApp">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Filters</title>
+
+  <meta name="description" content="">
+
+  <!--Framework CSS Boostrap 4.5.2-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body ng-controller="filterController">
+  <header>
+
+  </header>
+  <main>
+    <h1>Filters</h1>
+    <!--aplicamos el filtro personalizado que creamos-->
+    {{ myHTML | removeHtml }}
+    <!--aplicamos el filtro JSON-->
+    <br> <b>Aplicando filtro JSON</b>
+    <p>{{ objeto | json }}</p>
+    <!--aplicamos el filtro COSTO-->
+    <br> <b>Aplicando filtro Costo</b>
+    <p>{{ objeto.price | currency }}</p>
+    <!--aplicamos el filtro COSTO con parametros-->
+    <p>{{ objeto.price | currency:'&#8364;' }}</p>
+
+  </main>
+  <footer>
+
+  </footer>
+  <!-- Angular 1.8.2 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <!-- Framework CSS Boostrap 4-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!--Files JavaScript-->
+  <script src="../js/filter.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="MyFirstApp">
+<!--ng-app  directiva AngularJS. Elemento raíz de nuestra aplicación-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Angular</title>
+</head>
+
+<body ng-controller="Controller">
+    <h1>Peticiones HTTP</h1>
+    <h2>Ejemplo de peticion GET</h2>
+    <ul>
+        <li ng-repeat="elemento in arreglo">
+            <h3>{{elemento.title}}</h3>
+            <p>{{elemento.body}}</p>
+        </li>
+    </ul>
+
+    <h2>Ejemplo de peticion POST</h2>
+    <label for="">Titulo</label>
+    <input type="text" ng-model="newPost.title">
+    <br>
+    <label for="">Cuerpo</label>
+    <input type="text" ng-model="newPost.body">
+    <br>
+    <button ng-click="addPost()">Agregar</button>
+</body>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script src="../js/petHTTP.js"></script>
+</html>

@@ -1,0 +1,46 @@
+<!Doctype html>
+<html lang="es" ng-app="myApp">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>$watch, $apply y $digest</title>
+
+  <meta name="description" content="">
+
+  <!--Framework CSS Boostrap 4.5.2-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body >
+  <header>
+
+  </header>
+  <main>
+    <h1>$watch, $apply y $digest</h1>
+    <section ng-controller="myController1">
+      <p>Forma de actualizar los datos cuando se utiliza un <b>setTimeout</b></p>
+      <p>{{nombre}}</p>
+    </section>
+    <section ng-controller="myController2">
+      <p>Forma de actualizar los datos cuando se utiliza un selector del boton con un <b>id</b></p>
+      <p>{{user}}</p>
+      <button id="boton">Haz Click</button>
+    </section>
+  </main>
+  <footer>
+
+  </footer>
+  <!-- Angular 1.8.2 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <!-- Framework CSS Boostrap 4-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!--Files JavaScript-->
+  <script src="../js/uso-$apply.js"></script>
+</body>
+
+</html>

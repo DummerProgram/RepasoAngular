@@ -1,0 +1,11 @@
+/*Tomamos el control de la animacion de carga atravez de ng-hide*/
+.animated{
+  opacity: 1;
+  max-height: auto;
+  transition: all 1s;
+}
+.animated.ng-hide{
+  opacity: 0;
+  max-height: 0px !important;
+  display: block !important;
+}

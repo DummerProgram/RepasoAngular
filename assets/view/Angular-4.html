@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="MyFirstApp">
+<!--ng-app  directiva AngularJS. Elemento raíz de nuestra aplicación-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Angular</title>
+</head class="">
+<body ng-controller="Controller">
+  <ul>
+    <li ng-repeat="actividad in toDo">
+      {{actividad.descripcion}}
+      {{actividad.fecha | date: 'short'}} <!--Ejemplo de como filtrar los datos-->
+    </li>
+  </ul>
+  <form ng-submit="addAct()"> <!--Utilizamos ng-submit para accionar una funcion cuando un input tipo submit es accionado-->
+    <label for="">Descripcion</label>
+    <input type="text" ng-model="newAct.descripcion">
+    <br>
+    <label for="">Fecha</label>
+    <input type="datetime-local" ng-model="newAct.fecha">
+    <br>
+    <input type="submit" value="Guardar Actividad">
+  </form>
+  <button type="button" ng-click="clear()">Limpiar Lista</button>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script src="../js/angular-local-storage.min.js"></script>
+<script src="../js/toDo.js"></script>
+</html>

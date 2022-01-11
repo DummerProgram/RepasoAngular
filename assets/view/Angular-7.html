@@ -1,0 +1,50 @@
+<!Doctype html>
+<html lang="es" ng-app="myApp">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ng hide : ng show</title>
+
+  <meta name="description" content="">
+  <link rel="stylesheet" href="../css/uso-ngHIDE-ngSHOW.css">
+
+  <!--Framework CSS Boostrap 4.5.2-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body ng-controller="myController">
+  <header>
+
+  </header>
+  <main>
+    <h1>ng hide : ng show</h1>
+    <div ng-show="loading"> <!--Se estan buscando los datos-->
+        <h2>Cargando...</h2>
+    </div>
+    <div ng-show="!loading && arreglo.length <= 0"><!--si no se encontraron los datos-->
+      <h2>Sin Resultados</h2>
+    </div>
+    <ul ng-show="arreglo.length > 0" class="animated"><!--Animamos la transicion de los datos-->
+        <li ng-repeat="elemento in arreglo">
+            <h3>{{elemento.title}}</h3>
+            <p>{{elemento.body}}</p>
+        </li>
+    </ul>
+  </main>
+  <footer>
+
+  </footer>
+  <!-- Angular 1.8.2 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <!-- Framework CSS Boostrap 4-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!--Files JavaScript-->
+  <script src="../js/uso-ngHIDE-ngSHOW.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!Doctype html>
+<html lang="es" ng-app="myApp">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> ng-events y ng-class</title>
+
+  <meta name="description" content="">
+
+  <!--Framework CSS Boostrap 4.5.2-->
+  <style>
+    .circular{
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      display: inline-block;
+    }
+  </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+  <header>
+
+  </header>
+  <main class="container mt-1" ng-controller="myController">
+    <h1> ng-events y ng-class</h1>
+    <div class="pt-2">
+      <h3>Uso de <b>ng-mouseover</b> y <b>ng-mouseout</b> </h3>
+      <div class="mx-auto pt-3" style="width:150px">
+        <button type="button" class="btn btn-dark" ng-mouseover="bandera = true" ng-mouseout="bandera = false">Pasa el mouse</button>
+      </div>
+      <div class="pt-3">
+        <p class="bg-success text-white text-center"  ng-show="bandera">TRUE</p>
+        <p class="bg-danger text-white text-center" ng-show="!bandera"> FALSE</p>
+      </div>
+    </div>
+    <div class="pt-2">
+      <h3>Uso de <b>ng-click y ng-class</b></h3>
+      <div class="mx-auto pt-3" style="width:150px">
+        <button type="button" class="btn btn-dark" ng-click="bandera = !bandera">Pasa el
+          mouse</button>
+      </div>
+      <div class="pt-3">
+        <p ng-class="{'bg-success text-white text-center' : bandera, 'bg-danger text-white text-center' : !bandera}">
+          {{bandera | json}}
+        </p>
+      </div>
+    </div>
+    <div class="pt-2">
+      <h3>Uso de <b>ng-src</b></h3>
+      <div class="mx-auto pt-3">
+        <p class="bg-primary text-white text-justify">
+          Tenemos el enlace:
+          <br>
+          {{enlace = "https://www.next-t.co.kr/public/uploads/7b7f7e2138e29e598cd0cdf2c85ea08d.jpg"}}
+          <br>
+          utilizaremos <b>ng-src</b> para mostrar en enlace anterior
+        </p>
+        <div>
+          <img ng-src="{{enlace}}" alt="" class="img-rounded center-block">
+        </div>
+    </div>
+    <div class="pt-2">
+      <h3>Creamos una directiva</h3>
+      <div class="mx-auto pt-3">
+        <p class="bg-primary text-white text-justify">
+          Hemos creado una directiva para darle estilo a una imagen
+        </p>
+        <div class="circular" back-img="{{enlace}}"></div>
+    </div>
+  </main>
+  <footer>
+
+  </footer>
+  <!-- Angular 1.8.2 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <!-- Framework CSS Boostrap 4-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!--Files JavaScript-->
+  <script src="../js/crear_directiva.js"></script>
+</body>
+
+</html>
+<!--
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+-->

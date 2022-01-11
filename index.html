@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="MyFirstApp"> <!--ng-app  directiva AngularJS. Elemento raíz de nuestra aplicación-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Angular</title>
+</head>
+<body ng-controller="FirstController"><!--Llamando al controllador-->
+    <h1>AngularJS 1.8.2</h1>
+    <ul>
+        <li><a href="assets/view/Angular-2.html">Ejemplo de un Controlador</a></li>
+        <li><a href="assets/view/Angular-3.html">Peticiones HTML</a></li>
+        <li><a href="assets/view/Angular-4.html">Crando lista toDo</a></li>
+        <li><a href="assets/view/Angular-5.html">Filters</a></li>
+        <li><a href="assets/view/Angular-6.html">$watch, $apply y $digest</a></li>
+        <li><a href="assets/view/Angular-7.html">ng hide : ng show</a></li>
+        <li><a href="assets/view/Angular-8.html">Factory</a></li>
+        <li><a href="assets/view/Angular-9.html">Services</a></li>
+        <li><a href="assets/view/Angular-10.html">ng-events y ng-class</a></li>
+        <li><a href=""></a></li>
+    </ul>
+    {{"Hola " + "Mundo"}} <!--la forma en como interpreta el codigo-->
+    <br>
+    <!--***********************************************************************-->
+    <h3>Usuario</h3>
+    <label for="">Usuario</label>
+    <input type="text" ng-model="nombre"><!--sincroniza el valor de la variable con el cotrolador-->
+    <br>
+    {{"Hola " + nombre}}<!--Utilizando la variable decladara dentro de $Scope-->
+
+    <!--***********************************************************************-->
+    <h3>Agregar Comentario</h3>
+    <label for="">Usuario</label>
+    <input type="text" ng-model="nuevoComentario.username"><!--sincroniza el valor de la variable con el cotrolador-->
+    <br>
+    <label for="">Comentario</label>
+    <input type="text" ng-model="nuevoComentario.comentario"><!--sincroniza el valor de la variable con el cotrolador-->
+    <br>
+    <button ng-click="agregarComentario_1()">Agregar</button><!--Llamado a la funcion con la directiva ng-click-->
+    <br>
+    <h3>Comentarios</h3>
+    <ul>
+        <li ng-repeat="comentario in comentarios"> <!--Esta directiva actua como un bucle para desplegar el contenido de un arreglo-->
+            {{comentario.comentario}} - <strong>{{comentario.username}}</strong>  <!--Informacion de cada elemento del arreglo-->
+        </li>
+    </ul>
+    <!--***********************************************************************-->
+
+
+</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="assets/js/principios-Angular.js"></script>
+</html>
